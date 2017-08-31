@@ -18,6 +18,7 @@ build
 .gradle
 
 # other
+*.pdn
 eclipse
 run
 /.nb-gradle/
