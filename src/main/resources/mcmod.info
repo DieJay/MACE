@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
+  "modid": "mace",
+  "name": "Minecraft Advanced Compat Extension",
   "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["MrDj200", "Caligos"],
+  "credits": "Caligos (Cavadeca, SWISA and other names of his :/), Dj",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
