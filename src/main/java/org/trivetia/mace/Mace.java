@@ -20,8 +20,6 @@ public class Mace {
     public static final String VERSION = "0.1";
     public static final String NAME = "Minecraft Advanced Compatibility Extension";
     
-    public SpatialIO spatialMods = null;
-    
     @SidedProxy(clientSide = "org.trivetia.mace.client.ClientProxy", serverSide = "org.trivetia.mace.server.ServerProxy")
     public static CommonProxy proxy;
     
@@ -31,14 +29,16 @@ public class Mace {
     void preInit( FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        proxy.preInit(event);
     }
     
     @EventHandler
     void init( FMLInitializationEvent event )
     {
+        proxy.init(event);
         if( Loader.isModLoaded("appliedenergistics2") )
         {
-            spatialMods = new SpatialIO();
+            SpatialIO spatialMods = new SpatialIO();
             spatialMods.registerMods();
         }
     }   
@@ -46,7 +46,7 @@ public class Mace {
     @EventHandler
     void postInit( FMLPostInitializationEvent event)
     {
-        
+        proxy.postInit(event);
     }
     
     @EventHandler
