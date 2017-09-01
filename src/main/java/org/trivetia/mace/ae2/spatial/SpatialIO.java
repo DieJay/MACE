@@ -17,7 +17,7 @@ public class SpatialIO
     
     public SpatialIO()
     {
-        this.modsToAdd.addAll(Arrays.asList(ConfigAe2.spatialMods));        
+        this.modsToAdd.addAll(ConfigAe2.spatialMods);
         
     }
     

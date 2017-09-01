@@ -9,10 +9,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
-import org.apache.logging.log4j.Logger;
-
 import org.trivetia.mace.common.CommonProxy;
 import org.trivetia.mace.ae2.spatial.SpatialIO;
+import org.trivetia.mace.commands.CommandSpatialAdd;
 
 @Mod(modid = Mace.MODID, version = Mace.VERSION, name = Mace.NAME)
 public class Mace {
@@ -23,12 +22,9 @@ public class Mace {
     @SidedProxy(clientSide = "org.trivetia.mace.client.ClientProxy", serverSide = "org.trivetia.mace.server.ServerProxy")
     public static CommonProxy proxy;
     
-    public static Logger logger;
-    
     @EventHandler
     void preInit( FMLPreInitializationEvent event)
     {
-        logger = event.getModLog();
         proxy.preInit(event);
     }
     
@@ -53,7 +49,7 @@ public class Mace {
     public void serverLoad(FMLServerStartingEvent event) {
         if( Loader.isModLoaded("appliedenergistics2") )
         {
-            //event.registerServerCommand(new CommandSpatialAdd());
+            event.registerServerCommand(new CommandSpatialAdd());
         }
     }
     
