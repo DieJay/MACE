@@ -1,25 +1,24 @@
 package org.trivetia.mace.ae2.spatial;
 
-import com.google.common.collect.Lists;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.RegistryNamespaced;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
+import org.trivetia.mace.config.ae2.ConfigAe2;
 
 public class SpatialIO 
 {    
-    
-    
-    private final List<String> modsToAdd; //Contains Mods which will be loaded
+        
+    private final List<String> modsToAdd = new ArrayList<>(); //Contains Mods which will be loaded
     
     public SpatialIO()
     {
-        this.modsToAdd = Lists.newArrayList
-        (
-                "ironchest"
-        );        
+        this.modsToAdd.addAll(Arrays.asList(ConfigAe2.spatialMods));        
+        
     }
     
     public void addMod(String mod)

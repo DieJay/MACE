@@ -8,8 +8,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.trivetia.mace.config.MaceConfigs;
 
-import org.trivetia.mace.config.ae2.ConfigAe2;
-
 /**
  *
  * @author Dj
@@ -18,7 +16,6 @@ import org.trivetia.mace.config.ae2.ConfigAe2;
 public class CommonProxy 
 {
     // Config instance
-    public static Configuration spatialConfigObj;
     public static MaceConfigs maceCfgs = null;
     
     public void preInit(FMLPreInitializationEvent e) 
@@ -37,8 +34,6 @@ public class CommonProxy
     
     public void postInit(FMLPostInitializationEvent e) 
     {
-        if (spatialConfigObj.hasChanged()) {
-            spatialConfigObj.save();
-        }
+        maceCfgs.saveAll();
     }
 }

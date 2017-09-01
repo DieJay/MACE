@@ -15,6 +15,8 @@ public class MaceConfigs
 {
     
     public File configDirectory = null;
+    public static Configuration ae2Cfg = null;
+    
     public MaceConfigs(FMLPreInitializationEvent e) 
     {
         configDirectory = new File(e.getModConfigurationDirectory(), Mace.MODID);
@@ -25,8 +27,14 @@ public class MaceConfigs
     {
         if(Loader.isModLoaded("appliedenergistics2"))
         {
-            Configuration ae2Cfg = new Configuration(new File(configDirectory.getPath(), "ae2.cfg"));
+            ae2Cfg = new Configuration(new File(configDirectory.getPath(), "ae2.cfg"));
             ConfigAe2.readConfig();
+        }
+    }
+
+    public void saveAll() {
+        if (ae2Cfg.hasChanged()) {
+            ae2Cfg.save();
         }
     }
     
