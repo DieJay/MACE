@@ -14,9 +14,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
-import org.trivetia.mace.Mace;
+import org.trivetia.mace.ae2.spatial.SpatialIO;
 
 /**
  *
@@ -24,10 +22,12 @@ import org.trivetia.mace.Mace;
  */
 public class CommandSpatialAdd extends CommandBase 
 {
-            
+    
+    private final String commandName = "maceSpatial";
+    
     public CommandSpatialAdd()
     {
-        aliases = Lists.newArrayList("mace");
+        aliases = Lists.newArrayList(commandName, "mS");
     }
     private final List<String> aliases;
     
@@ -40,13 +40,13 @@ public class CommandSpatialAdd extends CommandBase
     @Override
     public String getName() 
     {
-        return "mace";
+        return commandName;
     }    
     
     @Override
     public String getUsage(ICommandSender sender) 
     {
-        return "/mace < dunno1 | dunno2 >";
+        return "/" + commandName + "< name>";
     }
 
     @Override
@@ -58,8 +58,8 @@ public class CommandSpatialAdd extends CommandBase
     @Override
     public void execute( MinecraftServer server, ICommandSender sender,  String[] args) throws CommandException
     {
-        if (sender instanceof EntityPlayer) {
-            sender.sendMessage(new TextComponentString(TextFormatting.RED + "Hey " + ((EntityPlayer) sender).getDisplayNameString()));
+        if (sender instanceof EntityPlayer)
+        {
         }
     }
 
@@ -76,8 +76,7 @@ public class CommandSpatialAdd extends CommandBase
 
         if (args.length == 1)
         {
-            suggestions.add("dunno1");
-            suggestions.add("dunno2");
+            suggestions.add("dunno");
         }
 
         return getListOfStringsMatchingLastWord(args, suggestions);

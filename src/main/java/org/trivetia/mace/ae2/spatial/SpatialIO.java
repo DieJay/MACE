@@ -18,12 +18,11 @@ public class SpatialIO
     {
         this.modsToAdd = Lists.newArrayList
         (
-                "draconicevolution",
                 "ironchest"
         );        
     }
     
-    private void addMod(String mod)
+    public void addMod(String mod)
     {
         this.modsToAdd.add(mod);
     }
