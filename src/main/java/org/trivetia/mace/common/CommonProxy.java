@@ -20,10 +20,6 @@ public class CommonProxy
     
     public void preInit(FMLPreInitializationEvent e) 
     {
-        /*File directory = e.getModConfigurationDirectory();
-        spatialConfigObj = new Configuration(new File(directory.getPath(), "dunno.cfg"));
-        ConfigAe2.readConfig();
-        */
         maceCfgs = new MaceConfigs(e);
     }
     

@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 import org.trivetia.mace.common.CommonProxy;
-import org.trivetia.mace.ae2.spatial.SpatialIO;
 import org.trivetia.mace.commands.CommandSpatialAdd;
 
 @Mod(modid = Mace.MODID, version = Mace.VERSION, name = Mace.NAME)
@@ -19,30 +18,28 @@ public class Mace {
     public static final String VERSION = "0.1";
     public static final String NAME = "Minecraft Advanced Compatibility Extension";
     
-    @SidedProxy(clientSide = "org.trivetia.mace.client.ClientProxy", serverSide = "org.trivetia.mace.server.ServerProxy")
+    @SidedProxy(clientSide = "org.trivetia.mace.client.ClientProxy", serverSide = "org.trivetia.common.CommonProxy")
     public static CommonProxy proxy;
     
     @EventHandler
     void preInit( FMLPreInitializationEvent event)
     {
         proxy.preInit(event);
+        ModuleActivator.preInit(event);
     }
     
     @EventHandler
     void init( FMLInitializationEvent event )
     {
         proxy.init(event);
-        if( Loader.isModLoaded("appliedenergistics2") )
-        {
-            SpatialIO spatialMods = new SpatialIO();
-            spatialMods.registerMods();
-        }
+        ModuleActivator.init(event);
     }   
     
     @EventHandler
     void postInit( FMLPostInitializationEvent event)
     {
         proxy.postInit(event);
+        ModuleActivator.postInit(event);
     }
     
     @EventHandler

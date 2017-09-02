@@ -17,8 +17,7 @@ public class ConfigAe2
 
     // This values below you can access elsewhere in your mod:    
     public static boolean enbaleSpatialCompat = true;
-    //public static String[] spatialMods = new String[] {"draconicevolution", "computercraft"};
-    public static List<String> spatialMods = Lists.newArrayList("draconicevolution", "computercraft", "test");
+    public static List<String> spatialMods = Lists.newArrayList("draconicevolution", "computercraft");
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
@@ -39,7 +38,7 @@ public class ConfigAe2
     
     public static void addSpatialEntry(String newEntry)
     {
-        //Doesnt twork :c
+        //  Doesnt twork :c
     }
     
     private static void initSpatialConfig(Configuration cfg)
