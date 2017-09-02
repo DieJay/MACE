@@ -1,11 +1,11 @@
 [
 {
   "modid": "mace",
-  "name": "Minecraft Advanced Compat Extension",
-  "description": "Example placeholder mod.",
+  "name": "Minecraft Advanced Compatibility Extension",
+  "description": "Example placeholder text.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/DieJay/MACE",
   "updateUrl": "",
   "authorList": ["MrDj200", "Caligos"],
   "credits": "Caligos (Cavadeca, SWISA and other names of his :/), Dj",

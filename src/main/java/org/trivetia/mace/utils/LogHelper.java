@@ -1,9 +1,9 @@
 package org.trivetia.mace.utils;
 
-import com.example.examplemod.ExampleMod;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.trivetia.mace.Mace;
 
 /**
  *
@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 public class LogHelper 
 {
 	
-	private static final Logger logger = LogManager.getLogger(ExampleMod.MODID);
+	private static final Logger logger = LogManager.getLogger(Mace.MODID);
 	
 	public static void log(Level level, Object object) {
 		logger.log(level, String.valueOf(object));

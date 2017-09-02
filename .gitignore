@@ -14,10 +14,12 @@ out
 .idea
 
 # gradle
+*.nb-gradle-properties
 build
 .gradle
 
 # other
+*.pdn
 eclipse
 run
 /.nb-gradle/
