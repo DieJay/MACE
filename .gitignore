@@ -14,6 +14,7 @@ out
 .idea
 
 # gradle
+*.nb-gradle-properties
 build
 .gradle
 
